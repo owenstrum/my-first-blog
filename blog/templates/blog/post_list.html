@@ -3,19 +3,13 @@
         <title>Owen's Blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="/">Owen's Blog</a></h1>
-            <p>Bienvenidos</p>
-        </div>
-
-        <div>
-            <h2><a href="">My first post</a></h2>
-            <p>we made it</p>
-        </div>
-
-        <div>
-            <h2><a href="">My second post</a></h2>
-            <p>uno dos tres</p>
-        </div>
+        <div><h1><a href="/">Owen's Blog</a></h1></div>
+            {% for post in posts %}
+                <div>
+                    <p>published: {{ post.published_date }}</p>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
     </body>
 </html>
